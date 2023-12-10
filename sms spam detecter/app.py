@@ -27,7 +27,6 @@ vectorize_text = pickle.load(open("D:/osama/Classification-Models/sms spam detec
 
 
 
-new_data = 'Win 1OLakh/- cash on Zupee va1.in/N3-zp'
 
 def preprocess_text(text):
     words = nltk.word_tokenize(text.lower())
@@ -55,6 +54,9 @@ st.title("Spam Detector")
 
 #user input
 user_input = st.text_input("Enter a message....")
-if user_input:
-    result = predict_spam(user_input)
-    st.write("Prediction:", result)
+if st.button("Detect"):
+    if user_input:
+        result = predict_spam(user_input)
+        st.write("Prediction:", result)
+    else:
+        st.write("Please enter a message to detect.")
