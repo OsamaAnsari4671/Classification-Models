@@ -52,6 +52,18 @@ def predict_spam(text):
 # app
 st.title("Spam Detector")
 
+# Sidebar with app information
+st.sidebar.markdown(
+    """
+    ## About
+    This app predicts whether a given SMS message is spam or not.
+
+    **Instructions:**
+    1. Enter a message in the text box.
+    2. Click the "Detect" button to see the prediction result.
+    """
+)
+
 #user input
 user_input = st.text_input("Enter a message....")
 if st.button("Detect"):
